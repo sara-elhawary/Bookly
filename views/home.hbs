@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- font awesome link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+       
+    <!--  css dosya link  -->
+    <link rel="stylesheet" href="/../css/style.css">
+    
+   
+    <style>
+        a{
+            text-decoration: none;
+        }
+
+        .sepet{
+           background-color: #27ae32 !important;
+            font-size: 13px;
+        }
+    </style>
+
+</head>
+<body>
+    
+<!--baslik bolumu baslar  -->
+
+<header class="header">
+
+    <div class="header-1">
+
+        <a href="home.html" class="logo"> <i class="fas fa-book"></i> bookly </a>
+
+        <form action="" class="search-form">
+            <input type="search" name="" placeholder="burada ara..." id="search-box">
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
+
+        <div class="icons">
+            <div id="search-btn" class="fas fa-search"></div>
+            <a href="kart.html" class="fas fa-shopping-cart"></a>
+            <div id="login-btn" class="fas fa-user"></div>
+        </div>
+
+    </div>
+
+       <div class="header-2">
+        <nav class="navbar">
+            <a href="home.html">Ana Sayfa</a>
+            <a href="kitap.html">Türkçe Kitaplar</a>
+            <a href="books.html">Yabancı Kitaplar</a>
+            <a href="reviews.html">yorumlar</a>
+            <a href="aboutus.html">Hakkımızda</a>        
+        </nav>
+    </div>
+
+</header>
+
+<!-- baslik bolumu biter -->
+
+<!-- Giris Formu  -->
+
+<div class="login-form-container">
+
+    <div id="close-login-btn" class="fas fa-times"></div>
+
+    <form action="">
+        <h3>Giriş Yap</h3>
+        <span>Kullanıcı adı</span>
+        <input type="email" name="" class="box" placeholder="E-postanızı giriniz" id="">
+        <span>password</span>
+        <input type="password" name="" class="box" placeholder="şifrenizi girin" id="">
+        <div class="checkbox">
+            <input type="checkbox" name="" id="remember-me">
+            <label for="remember-me"> beni Hatırla</label>
+        </div>
+        <input type="submit" value="Giriş Yap" class="btn">
+
+        <p>Şifreyi unuttun mu? <a href="#">buraya tıklayın</a></p>
+        <p>hesabın yok mu? <a href="kayitol.html">Kayıt ol</a></p>
+    </form>
+
+</div>
+
+
+<!-- Giris Formu Sonu -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Ana Sayfa bolum baslar  -->
+
+<section class="home" id="home">
+
+    <div class="row">
+
+        <div class="content">
+            <h3>%75'e Varan İndirim</h3>
+	    <a href="#" class="btn">Şimdi satın al</a>
+        </div>
+
+        <div class="swiper books-slider">
+            <div class="swiper-wrapper">
+                <a href="#" class="swiper-slide"><img src="/../image/book-1.png" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="/../image/book-2.png" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="/../image/book-3.png" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="/../image/book-4.png" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="/../image/book-5.png" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="/../image/book-6.png" alt=""></a>
+            </div>
+            <img src="/../image/stand.png" class="stand" alt="">
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ana sayfa bolum biter  -->
+
+<!-- ikon bolum baslar -->
+
+<section class="icons-container">
+
+    <div class="icons">
+        <i class="fas fa-shipping-fast"></i>
+        <div class="content">
+            <h3>Ücretsiz kargo</h3>
+            <p>100tl üzeri sipariş</p>
+        </div>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-lock"></i>
+        <div class="content">
+            <h3>Güvenli ödeme</h3>
+            <p>100 Güvenli ödeme</p>
+        </div>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-redo-alt"></i>
+        <div class="content">
+            <h3>Kolay İade</h3>
+            <p>10 Gün İade</p>
+        </div>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-headset"></i>
+        <div class="content">
+            <h3>7/24 Destek</h3>
+            <p>Bizi İstediğiniz Zaman Arayın</p>
+        </div>
+    </div>
+
+</section>
+
+<!-- ikon bolumu biter -->
+
+<!-- haber bulteni bolumu basliyor -->
+
+<section class="newsletter">
+
+    <form action="">
+        <h3>En Son Güncellemeler İçin Abone Olun</h3>
+        <input type="email" name="" placeholder="E-postanızı giriniz" id="" class="box">
+        <input type="submit" value="abone ol" class="btn">
+    </form>
+
+</section>
+
+<!-- haber bulteni bolum biter -->
+
+
+
+<!-- anlasma bolumu basliyor -->
+
+<section class="deal">
+
+    <div class="content">
+        <h3>Günün Satış teklifi</h3>
+        <h1>%50'ye Varan İndirim</h1>
+        <a href="#" class="btn">şimdi satın al</a>
+    </div>
+
+    <div class="image">
+        <img src="/../image/deal-img.jpg" alt="">
+    </div>
+
+</section>
+
+<!-- anlasma bolumu bitiyor -->
+
+<!-- alt bilgi bolumu baslar -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>Hızlı Linkler</h3>
+            <a href="home.html"><i class="fas fa-arrow-right"></i>Ana Sayfa</a>
+            <a href="aboutus.html"><i class="fas fa-arrow-right"></i>Hakkımızda</a>
+            <a href="kitap.html"><i class="fas fa-arrow-right"></i>Türkçe Kitaplar</a>
+	        <a href="books.html"><i class="fas fa-arrow-right"></i>Yabancı Kitaplar</a>
+            <a href="reviews.html"><i class="fas fa-arrow-right"></i>Yorumlar</a>
+
+            <h3>İletişim bilgileri</h3>
+            <a href="#"> <i class="fas fa-phone"></i> +905525095504 </a>     
+            <a href="#"> <i class="fas fa-envelope"></i> yaseryaseryaser01996@gmail.com </a>
+
+        </div>
+        
+    </div>
+
+       <div class="share">
+        <a href="https://www.instagram.com/?hl=en" class="fab fa-instagram"></a>
+        <a href="https://www.facebook.com/yasir.huseyin.79" class="fab fa-facebook"></a>
+	    <a href="https://twitter.com/?lang=en" class="fab fa-twitter"></a>>
+    </div>
+
+    <div class="credit"> created by Yasir Hüseyin </span> | her hakkı saklıdır! </div>
+
+</section>
+
+<!-- alt bilgi bolumu biter -->
+
+<!-- loader  -->
+
+
+
+
+<div class="loader-container">
+    <img src="/../image/loader-img.gif" alt="">
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="/../js/script.js"></script>
+
+</body>
+</html>
