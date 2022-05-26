@@ -85,7 +85,11 @@
             <input type="checkbox" name="" id="remember-me">
             <label for="remember-me"> beni Hatırla</label>
         </div>
-        <input type="submit" value="Giriş Yap" class="btn">
+       
+<input type="submit" value="Giriş Yap" class="btn">
+       {{#if failed}}
+        <span style="color: red;">invalid email or password</span>
+        {{/if}}
         <p>Şifreyi unuttun mu? <a href="#">buraya tıklayın</a></p>
         <p>hesabın yok mu? <a href="kayitol">Kayıt ol</a></p>
     </form>

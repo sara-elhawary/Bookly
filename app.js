@@ -1,5 +1,8 @@
 const express = require("express");
 const app = express();
+const sessions = require('express-session');
+var cookieParser = require('cookie-parser')
+const expressValidator = require('express-validator');
 const path=require("path");
 const hbs = require("hbs");
 const connectDB = require('./helpers/db');
@@ -7,6 +10,19 @@ const connectDB = require('./helpers/db');
 const port=process.env.PORT || 3000;
 
 require('dotenv').config({ path: './.env' });
+
+
+
+// creating 24 hours from milliseconds
+const oneDay = 1000 * 60 * 60 * 24;
+
+//session middleware
+app.use(sessions({
+  secret: "thisismysecrctekeyfhrgfgrfrty84fwir767",
+  saveUninitialized:true,
+  cookie: { maxAge: oneDay },
+  resave: false
+}));
 
 //require('./helpers/db');
 
@@ -17,9 +33,14 @@ app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 //end of bodypasres
+// app.use(expressValidator());
 
 //assets config
 app.use(express.static(path.join(__dirname, 'public')));
+
+// cookie parser middleware
+app.use(cookieParser());
+
 
 //hbs config
 app.set('view engine', 'hbs');
