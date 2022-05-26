@@ -1,5 +1,6 @@
 const router=require("express").Router();
-const {cart}=require("../controllers/cart");
+const {cart,addToCart}=require("../controllers/cart");
 
 router.get("/",cart)
+router.post("/add",addToCart)
 module.exports=router;
