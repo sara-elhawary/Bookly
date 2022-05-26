@@ -25,8 +25,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'hbs');
 app.set('views', 'views');
 app.engine('html', require('hbs').__express);
-// hbs.registerPartials(`${__dirname}/views/partials`);
-// hbs.registerPartial('header', '{{header}}');
+ hbs.registerPartials(`${__dirname}/views/partials`);
+hbs.registerPartial('bell', '{{bell}}');
 // hbs.registerPartial('sideBar', '{{sideBar}}');
 // hbs.registerPartial('settings', '{{settings}}');
 // hbs.registerPartial('footer', '{{footer}}');
@@ -61,11 +61,11 @@ app.use('/reviews',reviews)
 app.use((req, res) => {
     res.status(404).render("404")
 })
-
+const url='mongodb://localhost:27017/books';
 //listen to port and start the app
 const start = async () => {
     try {
-      await connectDB(process.env.MONGO_URI);
+      await connectDB(url);
       app.listen(port, () =>
         console.log(`Server is listening on port ${port}...`)
       );
