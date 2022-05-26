@@ -67,7 +67,14 @@
             <input type="checkbox" name="" id="remember-me">
             <label for="remember-me"> beni Hatırla</label>
         </div>
-        <input type="submit" value="Giriş Yap" class="btn">
+       
+<input type="submit" value="Giriş Yap" class="btn">
+        <div>
+            {{#each error}}
+                {{this.msg}}
+            {{/each}}
+        </div>
+
         <p>Şifreyi unuttun mu? <a href="#">buraya tıklayın</a></p>
         <p>hesabın yok mu? <a href="kayitol">Kayıt ol</a></p>
     </form>

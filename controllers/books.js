@@ -1,8 +1,10 @@
+
 const {Cart}=require("../models/cart");
 
 
 exports.books=async(req,res)=>{
-    let cart=await Cart.findOne({user:"628f9d182c2a0becc5dd7f2d"}).populate("items");
+    let cart=await Cart.findOne({user:req.session.userid 
+}).populate("items");
     if(cart){    
         return res.render("books",{bell: cart.items.length});
     }

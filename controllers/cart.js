@@ -1,10 +1,14 @@
+
 const {Cart}=require("../models/cart");
 const {Book}=require("../models/book");
 exports.cart=async(req,res)=>{
-    let cart=await Cart.findOne({user:"628f9d182c2a0becc5dd7f2d"}).populate("items");
+
+    let cart=await Cart.findOne({req.session.userid 
+}).populate("items");
  
     if(cart.items.length==0)
-    await Cart.updateOne({user:"628f9d182c2a0becc5dd7f2d"},{"totalPrice":0});
+    await Cart.updateOne({user:req.session.userid 
+},{"totalPrice":0});
    if(cart){    
        
     return res.render("kart",{cart,bell: cart.items.length});
@@ -13,16 +17,17 @@ exports.cart=async(req,res)=>{
 }
 
 exports.addToCart=async(req,res)=>{
-    
+    session =req.session.userid 
+
     const {params:{id}}=req;
-    const cart=await Cart.findOne({user:"628f9d182c2a0becc5dd7f2d"});
+    const cart=await Cart.findOne({user:session});
     const book=await Book.findOne({_id:id});
     if(cart){
-        await Cart.updateOne({user:"628f9d182c2a0becc5dd7f2d"},{$push:{"items":book._id},$inc:{totalPrice:+book.price}});
+        await Cart.updateOne({user:session},{$push:{"items":book._id},$inc:{totalPrice:+book.price}});
     }
     else{
        
-        await new Cart({user:"628f9d182c2a0becc5dd7f2d",items:[book._id],totalPrice:book.price}).save();
+        await new Cart({user:session,items:[book._id],totalPrice:book.price}).save();
         
     }
 
@@ -30,7 +35,8 @@ exports.addToCart=async(req,res)=>{
 }
 
 exports.emptyCart=async(req,res)=>{
-  await  Cart.findOneAndDelete({user:"628f9d182c2a0becc5dd7f2d"});
+session =req.session.userid 
+  await  Cart.findOneAndDelete({user:session});
   res.redirect("/kitap")
 }
 
@@ -41,3 +47,4 @@ exports.deleteCart=async(req,res)=>{
  
     res.redirect("/cart");
 }
+

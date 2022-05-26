@@ -1,5 +1,4 @@
-const { default: mongoose } = require('mongoose');
-const { customError } = require('../helpers/errorHandeler');
+const bcrypt = require('bcrypt');
 const { User } = require('../models/user');
 
 
@@ -11,12 +10,26 @@ exports.addUser = async (req, res, next) => {
 }
 
 exports.logIn = async (req, res, next) => {
-  const { body: { email, password } } = req;
+  const {email,password}=req.body;
+  if (!email || !password) {
+    return res.render("404")
+  }
 
-  let user = await User.findOne({ email: email }).select('password email isAdmin');
-  if(!user)return next(customError({ status: 400, message: "invalid Email or Password" }));
+  req.check
+  const user = await User.findOne({email});
 
-  return next(customError({ status: 400, message: "invalid Email or Password" }));
+  if(!user){
+    return res.render("404")
+  }
+
+  const validatePass=await bcrypt.compare(req.body.password , user.password);
+
+    if(!validatePass)return res.render("404");
+
+    session=req.session;
+    session.userid=req.body.email;
+    return res.render("home")
+
 }
 
 
