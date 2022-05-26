@@ -13,7 +13,7 @@
        
     <!--  css dosya link  -->
     <link rel="stylesheet" href="/../css/style.css">
-    
+     <link rel="stylesheet" href="/../izitoast/css/iziToast.min.css">
    
     <style>
         a{
@@ -44,7 +44,7 @@
 
         <div class="icons">
             <div id="search-btn" class="fas fa-search"></div>
-            <a href="cart" class="fas fa-shopping-cart"></a>
+           {{>bell}}
             <div id="login-btn" class="fas fa-user"></div>
         </div>
 
@@ -201,7 +201,7 @@
     <div class="content">
         <h3>Günün Satış teklifi</h3>
         <h1>%50'ye Varan İndirim</h1>
-        <a href="#" class="btn">şimdi satın al</a>
+          <button href="#" class="btn select-book" value={{book._id}}>Sepete ekle</button>
     </div>
 
     <div class="image">
@@ -285,6 +285,14 @@
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
 <!-- custom js file link  -->
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- js dosyasi baglantisi -->
+  <script src="/../izitoast/js/iziToast.min.js"></script>
+
+<script src="/../js/addBooks.js"></script>
 <script src="/../js/script.js"></script>
 
 </body>
