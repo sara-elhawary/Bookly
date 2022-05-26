@@ -22,6 +22,9 @@ const bookSchema = new mongoose.Schema({
     discount_percentage:{
         type:Number,
         default:0
+    },
+    pages:{
+        type:Number
     }
 });
 
