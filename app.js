@@ -61,11 +61,11 @@ app.use('/reviews',reviews)
 app.use((req, res) => {
     res.status(404).render("404")
 })
-const url='mongodb://localhost:27017/books';
+// const url='mongodb://localhost:27017/books';
 //listen to port and start the app
 const start = async () => {
     try {
-      await connectDB(url);
+      await connectDB(process.env.MONGO_URI);
       app.listen(port, () =>
         console.log(`Server is listening on port ${port}...`)
       );
