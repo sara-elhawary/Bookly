@@ -3,7 +3,7 @@ const {Cart}=require("../models/cart");
 const {Book}=require("../models/book");
 exports.cart=async(req,res)=>{
 
-    let cart=await Cart.findOne({req.session.userid 
+    let cart=await Cart.findOne({user:req.session.userid 
 }).populate("items");
  
     if(cart.items.length==0)
