@@ -32,7 +32,7 @@
         <div class="icons">
             <div id="search-btn" class="fas fa-search"></div>
            {{>bell}}
-            <div id="login-btn" class="fas fa-user"></div>
+             <a href="./login.hbs" class="fas fa-user"></a>
         </div>
 
     </div>
@@ -70,9 +70,11 @@
         </div>
        
 <input type="submit" value="Giriş Yap" class="btn">
-       {{#if failed}}
-        <span style="color: red;">invalid email or password</span>
-        {{/if}}
+        <div>
+            {{#each error}}
+                {{this.msg}}
+            {{/each}}
+        </div>
         <p>Şifreyi unuttun mu? <a href="#">buraya tıklayın</a></p>
         <p>hesabın yok mu? <a href="kayitol">Kayıt ol</a></p>
     </form>

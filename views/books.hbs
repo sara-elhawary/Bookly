@@ -69,9 +69,12 @@
         </div>
        
 <input type="submit" value="Giriş Yap" class="btn">
-       {{#if failed}}
-        <span style="color: red;">invalid email or password</span>
-        {{/if}}
+        <div>
+            {{#each error}}
+                {{this.msg}}
+            {{/each}}
+        </div>
+       
         <p>Şifreyi unuttun mu? <a href="#">buraya tıklayın</a></p>
         <p>hesabın yok mu? <a href="kayitol">Kayıt ol</a></p>
     </form>
@@ -296,16 +299,6 @@
     <div class="credit"> created by Yasir Hüseyin </span> | her hakkı saklıdır! </div>
 
 </section>
-
-<!-- alt bilgi bolumu biter -->
-
-
-
-
-
-
-
-
 
 
 
