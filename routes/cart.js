@@ -1,6 +1,8 @@
 const router=require("express").Router();
-const {cart,addToCart}=require("../controllers/cart");
+const {cart,addToCart,emptyCart}=require("../controllers/cart");
+
+router.get("/add/:id",addToCart)
+router.get("/empty",emptyCart);
 
 router.get("/",cart)
-router.post("/add",addToCart)
 module.exports=router;
