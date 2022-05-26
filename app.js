@@ -73,6 +73,7 @@ app.use('/reviews',reviews)
 app.use((req, res) => {
     res.status(404).render("404")
 })
+
 //listen to port and start the app
 const start = async () => {
     try {
