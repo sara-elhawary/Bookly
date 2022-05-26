@@ -70,18 +70,20 @@
 
     <div id="close-login-btn" class="fas fa-times"></div>
 
-    <form action="">
+    <form action="/user/login" method="post">
         <h3>Giriş Yap</h3>
         <span>Kullanıcı adı</span>
-        <input type="email" name="" class="box" placeholder="E-postanızı giriniz" id="">
+        <input type="email" name="email" class="box" placeholder="E-postanızı giriniz" id="">
         <span>password</span>
-        <input type="password" name="" class="box" placeholder="şifrenizi girin" id="">
+        <input type="password" name="password" class="box" placeholder="şifrenizi girin" id="">
         <div class="checkbox">
             <input type="checkbox" name="" id="remember-me">
             <label for="remember-me"> beni Hatırla</label>
         </div>
-        <input type="submit" value="Giriş Yap" class="btn">
-
+       <input type="submit" value="Giriş Yap" class="btn">
+       {{#if failed}}
+        <span style="color: red;">invalid email or password</span>
+        {{/if}}
         <p>Şifreyi unuttun mu? <a href="#">buraya tıklayın</a></p>
         <p>hesabın yok mu? <a href="kayitol">Kayıt ol</a></p>
     </form>
