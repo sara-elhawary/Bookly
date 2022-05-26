@@ -109,6 +109,7 @@
                         <th>Author</th>
                         <th>Pages</th>
                         <th>Price</th>
+                        <th>delete</th>
                     </tr>
                 </thead>
 
@@ -123,6 +124,7 @@
                         <td>Yaser huseyin</td>
                         <td>3343</td>
                         <td>{{item.price}}</td>
+                        <td><a class="btn" href="/cart/delete/{{item._id}}">delete</a></td>
                     </tr>
                     {{/each}}
 
