@@ -1,3 +1,4 @@
+
 const {Cart}=require("../models/cart");
 const {Book}=require("../models/book");
 exports.cart=async(req,res)=>{
@@ -29,3 +30,5 @@ exports.emptyCart=async(req,res)=>{
   await  Cart.findOneAndDelete({user:"628f9d182c2a0becc5dd7f2d"});
   res.redirect("/kitap")
 }
+
+
