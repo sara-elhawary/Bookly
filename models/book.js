@@ -25,6 +25,10 @@ const bookSchema = new mongoose.Schema({
     },
     pages:{
         type:Number
+    },
+    isOnDiscount:{
+        type:Boolean,
+        default:false
     }
 });
 
