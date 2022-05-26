@@ -1,6 +1,3 @@
-
-
-
-exports.home=async(req,res)=>{
-    res.render("home");
+exports.books=async(req,res)=>{
+    res.render("books");
 }

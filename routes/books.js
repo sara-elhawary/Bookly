@@ -1,5 +1,5 @@
 const router=require("express").Router();
-const {home}=require("../controllers/books");
+const {books}=require("../controllers/books");
 
-router.get("/home",home)
+router.get("/",books)
 module.exports=router;
